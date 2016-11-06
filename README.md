@@ -38,4 +38,4 @@ present(actionSheetController, animated: true, completion: nil)
 ```
 
 ## Appearance
-![Screenshot](https://github.com/EvilNOP/ActionSheetController/Screenshot.png)
+![Screenshot](https://github.com/EvilNOP/ActionSheetController/raw/master/Screenshot.png)
