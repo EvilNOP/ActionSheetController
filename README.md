@@ -5,6 +5,7 @@ Action sheet controller provides a modern as well as good-looking action sheet d
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Appearance](#appearance)
 
 ## Features
 
@@ -35,3 +36,6 @@ actionSheetController.addAction(alertAction: alertActionCancel)
 present(actionSheetController, animated: true, completion: nil)
 
 ```
+
+## Appearance
+![Screenshot](https://github.com/EvilNOP/ActionSheetController/Screenshot.png)
