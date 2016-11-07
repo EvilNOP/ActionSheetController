@@ -43,7 +43,7 @@ class ActionSheetController: UIViewController {
     private let actionSheetItemHeight: CGFloat = 49.0
     private let screenSize: CGSize = UIScreen.main.bounds.size
     
-    private let maskView = UIView()
+    private let underLayerView = UIView()
     private let actionSheet = UIView()
     
     private var screenShotImage: UIImage?
@@ -76,21 +76,21 @@ class ActionSheetController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set up a mask view.
-        maskView.frame = view.frame
-        maskView.alpha = 0.5
-        maskView.backgroundColor = UIColor(
+        // Set up a under layer view.
+        underLayerView.frame = view.frame
+        underLayerView.alpha = 0.5
+        underLayerView.backgroundColor = UIColor(
             red: 46.0 / 255.0, green: 49.0 / 255.0, blue: 50.0 / 255.0, alpha: 0.5
         )
         
-        view.addSubview(maskView)
+        view.addSubview(underLayerView)
         
         // Dismiss the action sheet controller when detects a tap.
         let tapGestureRecognizer = UITapGestureRecognizer(
             target: self, action: #selector(ActionSheetController.dismiss(tap:))
         )
         
-        maskView.addGestureRecognizer(tapGestureRecognizer)
+        underLayerView.addGestureRecognizer(tapGestureRecognizer)
         
         setUpActionSheet()
     }
