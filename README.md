@@ -10,6 +10,7 @@ Action sheet controller provides a modern as well as good-looking action sheet d
 ## Features
 
 - [x] The usage is designed as the same as the UIAlertController
+- [x] Background with blur effect 
 
 ## Requirements
 
