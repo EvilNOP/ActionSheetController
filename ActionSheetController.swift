@@ -38,7 +38,7 @@ class AlertAction {
 class ActionSheetController: UIViewController {
     
     // Constants.
-    private let minorPadding: CGFloat = 1.0
+    private let minorPadding: CGFloat = 0.5
     private let padding: CGFloat = 8.0
     private let actionSheetItemHeight: CGFloat = 49.0
     private let screenSize: CGSize = UIScreen.main.bounds.size
@@ -200,9 +200,9 @@ class ActionSheetController: UIViewController {
         }
         
         // Capture the bottom of the screen with the exact height of the action sheet, blur it when the view did appear.
-//        captureBottomScreen()
+        captureBottomScreen()
         
-        // First put the action sheet at the bottom the screen bounds
+        // First put the action sheet at the bottom the screen bounds.
         actionSheet.frame = CGRect(
             x: 0.0, y: screenSize.height, width: screenSize.width, height: actionSheetTotalHeight
         )
@@ -243,11 +243,6 @@ class ActionSheetController: UIViewController {
     }
     
     private func applyBlurEffect() {
-        // Append the blur image view when the snapshot is complete.
-        // The image is black if fails.
-        // Apply the light effect.
-//        screenShotImage = screenShotImage!.applyLightEffect()
-        
         let blurImageView = UIImageView(
             frame: CGRect(x: 0.0, y: 0.0, width: screenSize.width, height: actionSheetTotalHeight)
         )
@@ -259,6 +254,14 @@ class ActionSheetController: UIViewController {
         // Insert the blur image view at index 0.
         DispatchQueue.main.async {
             self.actionSheet.insertSubview(blurImageView, at: 0)
+            
+            let blurEffect = UIBlurEffect(style: .light)
+            
+            let visualEffectView = UIVisualEffectView(effect: blurEffect)
+            
+            visualEffectView.frame = blurImageView.frame
+            
+            self.actionSheet.insertSubview(visualEffectView, at: 1)
         }
     }
     
