@@ -1,4 +1,8 @@
 # ActionSheetController
+
+![Platform](http://img.shields.io/badge/platform-iOS-blue.svg?style=flat)
+[![Language](https://img.shields.io/badge/swift3-compatible-4BC51D.svg?style=flat)](https://developer.apple.com/swift)
+
 Action sheet controller provides a modern as well as good-looking action sheet different with the system.
 
 - [Features](#features)
